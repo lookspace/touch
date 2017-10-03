@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <title>touch</title>
+
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: lightgrey;
+        }
+
+        .iphone{
+            width: 340px;
+            height: 540px;
+            text-align: center;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            line-height:50px;
+            margin: -270px 0 0 -170px;
+        }
+    </style>
+
+    <body>
+        <a href="tel:10086">call 10086</a>
+        <a href="sms:10086">sms 10086</a>
+        <div class="iphone" id="div">
+            <p>touchstart事件: 当手指放在屏幕上时触发,按着屏幕不动,改变背景为天蓝色</p>
+            <p>touchmove事件: 当手指放在屏幕上移动时触发, 这里,改变背景为红色</p>
+            <p>touchend事件: 当手指放在屏幕上,触摸结束时触发, 这里,改变背景为橙色</p>
+        </div>
+        <script src="jquery/jquery-1.11.1.js"></script>
+        <script>
+        $('body').on('touchstart', 'div', function(e) {
+            $('div').css('background-color','lightblue');
+            
+        });
+
+         $('body').on('touchmove', 'div', function(e) {
+            $('div').css('background-color','red');
+            
+        });
+
+          $('body').on('touchend', 'div', function(e) {
+            $('div').css('background-color','orange');
+        
+        });
+            
+        </script>
+
+    </body>
+
+</html>
